@@ -77,6 +77,8 @@ def tabulka(f):
     print(radek())
     print(f"| {first[6]} | {first[7]} | {first[8]} |")
     print(radek())
+    
+    
 def pravidla():
     print("""                GAME RULES:
 Each player can place one mark (or stone)
