@@ -18,38 +18,26 @@ def main():
     print('{:^50}'.format("Let's start the game"))
     while True:
         if pocitani % 2 == 0:
-            print(carky())
-            x = input("Player x | Please enter your move number: ")
-            print(carky())
-            if x in seznam:
-                print("pole je obsazene")
-                continue
-            seznam.append(x)
-            if not x.isdigit():
-                print("musis zadat cislo")
-                continue
-            if spravne_cislo(x):
-                continue
-            pocitani += 1
-            f[int(x)] = "x"
-            vysledny_hrac = "x"
-
+            hrac = "x"
         else:
-            print(carky())
-            x = input("Player o | Please enter your move number: ")
-            print(carky())
-            if x in seznam:
-                print("pole je obsazene")
-                continue
-            seznam.append(x)
-            if not x.isdigit():
-                print("musis zadat cislo")
-                continue
-            if spravne_cislo(x):
-                continue
-            pocitani += 1
-            f[int(x)] = "o"
-            vysledny_hrac = "o"
+            hrac = "o"
+
+        print(carky())
+        x = input(f"Player {hrac} | Please enter your move number: ")
+        print(carky())
+        if x in seznam:
+             print("pole je obsazene")
+             continue
+        seznam.append(x)
+        if not x.isdigit():
+            print("musis zadat cislo")
+            continue
+        if spravne_cislo(x):
+            continue
+        pocitani += 1
+        f[int(x)] = hrac
+        vysledny_hrac = hrac
+
 
         first = list(f.values())
         tabulka(f)
