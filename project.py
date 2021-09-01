@@ -1,6 +1,3 @@
-import time
-
-
 def main():
     print("Welcome to Tic Tac Toe")
     print(carky())
@@ -46,10 +43,12 @@ def main():
                 print(carky())
                 print(f"Vyhrál hráč {vysledny_hrac} ")
                 quit()
-            if pocitani == 9:
-                print("Remíza!")
-                time.sleep(5)
-                quit()
+
+
+        if pocitani == 9 :
+            print("Remíza!")
+            quit()
+
 
 
 def radek():
@@ -77,8 +76,8 @@ def tabulka(f):
     print(radek())
     print(f"| {first[6]} | {first[7]} | {first[8]} |")
     print(radek())
-    
-    
+
+
 def pravidla():
     print("""                GAME RULES:
 Each player can place one mark (or stone)
